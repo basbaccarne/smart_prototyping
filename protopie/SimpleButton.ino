@@ -1,3 +1,5 @@
+// this codeblock reads the state of a button and sends changes as a 1/0 serial message over USB
+
 // wiring:
 // 3.3V <--> button side 1
 // button side 2 <--> digital pin 2
