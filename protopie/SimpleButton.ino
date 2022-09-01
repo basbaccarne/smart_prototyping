@@ -3,6 +3,9 @@
 // button side 2 <--> digital pin 2
 // button side 2 <--> 10k ohm resistor <--> ground
 
+// variables
+int oldButtonState = LOW;
+
 // pin numbers
 int buttonPin = 2;
 
@@ -16,7 +19,13 @@ void setup() {
 // loop
 void loop() {
   // read button
-  int buttonState = digitalRead(buttonPin);
-  Serial.println(buttonState);
+  int newButtonState = digitalRead(buttonPin);
+
+  // check for changes
+  if(newButtonState != oldButtonState){
+     Serial.println(newButtonState);
+     oldButtonState = newButtonState;
+  }
+  
   delay(1); 
 }
